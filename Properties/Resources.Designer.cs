@@ -73,9 +73,59 @@ namespace MyCharacterStory.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap Gemini_Generated_Image_o9tzqfo9tzqfo9tz {
+            get {
+                object obj = ResourceManager.GetObject("Gemini_Generated_Image_o9tzqfo9tzqfo9tz", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap Gemini_Generated_Image_okywysokywysokyw {
             get {
                 object obj = ResourceManager.GetObject("Gemini_Generated_Image_okywysokywysokyw", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap Gemini_Generated_Image_okywysokywysokyw1 {
+            get {
+                object obj = ResourceManager.GetObject("Gemini_Generated_Image_okywysokywysokyw1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap Gemini_Generated_Image_okywysokywysokyw2 {
+            get {
+                object obj = ResourceManager.GetObject("Gemini_Generated_Image_okywysokywysokyw2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap Gemini_Generated_Image_qo5rxwqo5rxwqo5r {
+            get {
+                object obj = ResourceManager.GetObject("Gemini_Generated_Image_qo5rxwqo5rxwqo5r", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap Gemini_Generated_Image_snhiblsnhiblsnhi {
+            get {
+                object obj = ResourceManager.GetObject("Gemini_Generated_Image_snhiblsnhiblsnhi", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
