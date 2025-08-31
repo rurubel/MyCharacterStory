@@ -30,8 +30,6 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.파일ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.내역불러오기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.끝내기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.도움말ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.myCharacterStory정보ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,18 +45,16 @@
             this.mainPanel = new System.Windows.Forms.Panel();
             this.selectionPanel = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.checkedListBox3 = new System.Windows.Forms.CheckedListBox();
-            this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
+            this.btnResult = new System.Windows.Forms.Button();
+            this.accCheckedListBox = new System.Windows.Forms.CheckedListBox();
+            this.clothesCheckedListBox = new System.Windows.Forms.CheckedListBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.itemsCheckedListBox = new System.Windows.Forms.CheckedListBox();
+            this.faceCheckedListBox = new System.Windows.Forms.CheckedListBox();
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.resultPanel = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MoneyFortune)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HealthyFortune)).BeginInit();
@@ -66,7 +62,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.SchoolFortune)).BeginInit();
             this.mainPanel.SuspendLayout();
             this.selectionPanel.SuspendLayout();
-            this.resultPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -87,30 +82,16 @@
             // 파일ToolStripMenuItem
             // 
             this.파일ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.내역불러오기ToolStripMenuItem,
-            this.toolStripSeparator1,
             this.끝내기ToolStripMenuItem});
             this.파일ToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.파일ToolStripMenuItem.Name = "파일ToolStripMenuItem";
             this.파일ToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
             this.파일ToolStripMenuItem.Text = "파일";
             // 
-            // 내역불러오기ToolStripMenuItem
-            // 
-            this.내역불러오기ToolStripMenuItem.Name = "내역불러오기ToolStripMenuItem";
-            this.내역불러오기ToolStripMenuItem.Size = new System.Drawing.Size(187, 26);
-            this.내역불러오기ToolStripMenuItem.Text = "내역 불러오기";
-            this.내역불러오기ToolStripMenuItem.Click += new System.EventHandler(this.내역불러오기ToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(184, 6);
-            // 
             // 끝내기ToolStripMenuItem
             // 
             this.끝내기ToolStripMenuItem.Name = "끝내기ToolStripMenuItem";
-            this.끝내기ToolStripMenuItem.Size = new System.Drawing.Size(187, 26);
+            this.끝내기ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.끝내기ToolStripMenuItem.Text = "끝내기";
             this.끝내기ToolStripMenuItem.Click += new System.EventHandler(this.끝내기ToolStripMenuItem_Click);
             // 
@@ -139,7 +120,8 @@
             this.MoneyFortune.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.MoneyFortune.TabIndex = 4;
             this.MoneyFortune.TabStop = false;
-            this.MoneyFortune.Click += new System.EventHandler(this.MoneyFortune_Click);
+            this.MoneyFortune.Tag = "재물운";
+            this.MoneyFortune.Click += new System.EventHandler(this.Fortune_Click);
             // 
             // HealthyFortune
             // 
@@ -151,7 +133,8 @@
             this.HealthyFortune.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.HealthyFortune.TabIndex = 3;
             this.HealthyFortune.TabStop = false;
-            this.HealthyFortune.Click += new System.EventHandler(this.HealthyFortune_Click);
+            this.HealthyFortune.Tag = "건강운";
+            this.HealthyFortune.Click += new System.EventHandler(this.Fortune_Click);
             // 
             // LoveFortune
             // 
@@ -163,7 +146,8 @@
             this.LoveFortune.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.LoveFortune.TabIndex = 2;
             this.LoveFortune.TabStop = false;
-            this.LoveFortune.Click += new System.EventHandler(this.LoveFortune_Click);
+            this.LoveFortune.Tag = "연애운";
+            this.LoveFortune.Click += new System.EventHandler(this.Fortune_Click);
             // 
             // SchoolFortune
             // 
@@ -175,7 +159,8 @@
             this.SchoolFortune.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.SchoolFortune.TabIndex = 1;
             this.SchoolFortune.TabStop = false;
-            this.SchoolFortune.Click += new System.EventHandler(this.SchoolFortune_Click);
+            this.SchoolFortune.Tag = "학업운";
+            this.SchoolFortune.Click += new System.EventHandler(this.Fortune_Click);
             // 
             // label1
             // 
@@ -246,17 +231,17 @@
             // selectionPanel
             // 
             this.selectionPanel.Controls.Add(this.button2);
-            this.selectionPanel.Controls.Add(this.button1);
-            this.selectionPanel.Controls.Add(this.checkedListBox3);
-            this.selectionPanel.Controls.Add(this.checkedListBox2);
+            this.selectionPanel.Controls.Add(this.btnResult);
+            this.selectionPanel.Controls.Add(this.accCheckedListBox);
+            this.selectionPanel.Controls.Add(this.clothesCheckedListBox);
             this.selectionPanel.Controls.Add(this.label10);
             this.selectionPanel.Controls.Add(this.label9);
             this.selectionPanel.Controls.Add(this.label8);
-            this.selectionPanel.Controls.Add(this.itemsCheckedListBox);
+            this.selectionPanel.Controls.Add(this.faceCheckedListBox);
             this.selectionPanel.Controls.Add(this.nameTextBox);
             this.selectionPanel.Controls.Add(this.label7);
             this.selectionPanel.Controls.Add(this.label6);
-            this.selectionPanel.Location = new System.Drawing.Point(0, 31);
+            this.selectionPanel.Location = new System.Drawing.Point(3, 31);
             this.selectionPanel.Name = "selectionPanel";
             this.selectionPanel.Size = new System.Drawing.Size(914, 531);
             this.selectionPanel.TabIndex = 10;
@@ -275,45 +260,38 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // button1
+            // btnResult
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.button1.Font = new System.Drawing.Font("휴먼편지체", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(833, 251);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 33);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "확인";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnResult.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnResult.Font = new System.Drawing.Font("휴먼편지체", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnResult.ForeColor = System.Drawing.Color.White;
+            this.btnResult.Location = new System.Drawing.Point(833, 251);
+            this.btnResult.Name = "btnResult";
+            this.btnResult.Size = new System.Drawing.Size(75, 33);
+            this.btnResult.TabIndex = 9;
+            this.btnResult.Text = "확인";
+            this.btnResult.UseVisualStyleBackColor = false;
+            this.btnResult.Click += new System.EventHandler(this.btnResult_Click);
             // 
-            // checkedListBox3
+            // accCheckedListBox
             // 
-            this.checkedListBox3.Font = new System.Drawing.Font("휴먼편지체", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.checkedListBox3.FormattingEnabled = true;
-            this.checkedListBox3.Items.AddRange(new object[] {
-            "얇은 금테 안경",
-            "일자형 눈썹",
-            "넓은 이마"});
-            this.checkedListBox3.Location = new System.Drawing.Point(76, 409);
-            this.checkedListBox3.Name = "checkedListBox3";
-            this.checkedListBox3.ScrollAlwaysVisible = true;
-            this.checkedListBox3.Size = new System.Drawing.Size(752, 82);
-            this.checkedListBox3.TabIndex = 8;
+            this.accCheckedListBox.Font = new System.Drawing.Font("휴먼편지체", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.accCheckedListBox.FormattingEnabled = true;
+            this.accCheckedListBox.Location = new System.Drawing.Point(76, 409);
+            this.accCheckedListBox.Name = "accCheckedListBox";
+            this.accCheckedListBox.ScrollAlwaysVisible = true;
+            this.accCheckedListBox.Size = new System.Drawing.Size(752, 82);
+            this.accCheckedListBox.TabIndex = 8;
             // 
-            // checkedListBox2
+            // clothesCheckedListBox
             // 
-            this.checkedListBox2.Font = new System.Drawing.Font("휴먼편지체", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.checkedListBox2.FormattingEnabled = true;
-            this.checkedListBox2.Items.AddRange(new object[] {
-            "얇은 금테 안경",
-            "일자형 눈썹",
-            "넓은 이마"});
-            this.checkedListBox2.Location = new System.Drawing.Point(76, 291);
-            this.checkedListBox2.Name = "checkedListBox2";
-            this.checkedListBox2.ScrollAlwaysVisible = true;
-            this.checkedListBox2.Size = new System.Drawing.Size(752, 82);
-            this.checkedListBox2.TabIndex = 7;
+            this.clothesCheckedListBox.Font = new System.Drawing.Font("휴먼편지체", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.clothesCheckedListBox.FormattingEnabled = true;
+            this.clothesCheckedListBox.Location = new System.Drawing.Point(76, 291);
+            this.clothesCheckedListBox.Name = "clothesCheckedListBox";
+            this.clothesCheckedListBox.ScrollAlwaysVisible = true;
+            this.clothesCheckedListBox.Size = new System.Drawing.Size(752, 82);
+            this.clothesCheckedListBox.TabIndex = 7;
             // 
             // label10
             // 
@@ -348,19 +326,15 @@
             this.label8.TabIndex = 4;
             this.label8.Text = "얼굴";
             // 
-            // itemsCheckedListBox
+            // faceCheckedListBox
             // 
-            this.itemsCheckedListBox.Font = new System.Drawing.Font("휴먼편지체", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.itemsCheckedListBox.FormattingEnabled = true;
-            this.itemsCheckedListBox.Items.AddRange(new object[] {
-            "얇은 금테 안경",
-            "일자형 눈썹",
-            "넓은 이마"});
-            this.itemsCheckedListBox.Location = new System.Drawing.Point(76, 174);
-            this.itemsCheckedListBox.Name = "itemsCheckedListBox";
-            this.itemsCheckedListBox.ScrollAlwaysVisible = true;
-            this.itemsCheckedListBox.Size = new System.Drawing.Size(752, 82);
-            this.itemsCheckedListBox.TabIndex = 3;
+            this.faceCheckedListBox.Font = new System.Drawing.Font("휴먼편지체", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.faceCheckedListBox.FormattingEnabled = true;
+            this.faceCheckedListBox.Location = new System.Drawing.Point(76, 174);
+            this.faceCheckedListBox.Name = "faceCheckedListBox";
+            this.faceCheckedListBox.ScrollAlwaysVisible = true;
+            this.faceCheckedListBox.Size = new System.Drawing.Size(752, 82);
+            this.faceCheckedListBox.TabIndex = 3;
             // 
             // nameTextBox
             // 
@@ -391,32 +365,12 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "캐릭터의 이름(실명 가능) 작성 후, 아이템을 선택해주세요.";
             // 
-            // resultPanel
-            // 
-            this.resultPanel.Controls.Add(this.label11);
-            this.resultPanel.Location = new System.Drawing.Point(0, 28);
-            this.resultPanel.Name = "resultPanel";
-            this.resultPanel.Size = new System.Drawing.Size(914, 534);
-            this.resultPanel.TabIndex = 11;
-            this.resultPanel.Visible = false;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("휴먼편지체", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label11.Location = new System.Drawing.Point(371, 37);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(148, 35);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "테스트 결과";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(914, 562);
-            this.Controls.Add(this.resultPanel);
             this.Controls.Add(this.selectionPanel);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.menuStrip1);
@@ -434,8 +388,6 @@
             this.mainPanel.PerformLayout();
             this.selectionPanel.ResumeLayout(false);
             this.selectionPanel.PerformLayout();
-            this.resultPanel.ResumeLayout(false);
-            this.resultPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -445,8 +397,6 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 파일ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 내역불러오기ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem 끝내기ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 도움말ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem myCharacterStory정보ToolStripMenuItem;
@@ -465,15 +415,13 @@
         private System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.CheckedListBox itemsCheckedListBox;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.CheckedListBox checkedListBox3;
-        private System.Windows.Forms.CheckedListBox checkedListBox2;
+        private System.Windows.Forms.CheckedListBox faceCheckedListBox;
+        private System.Windows.Forms.Button btnResult;
+        private System.Windows.Forms.CheckedListBox accCheckedListBox;
+        private System.Windows.Forms.CheckedListBox clothesCheckedListBox;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Panel resultPanel;
-        private System.Windows.Forms.Label label11;
     }
 }
 
